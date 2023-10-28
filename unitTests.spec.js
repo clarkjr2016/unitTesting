@@ -1,4 +1,9 @@
-import { capitalize, reverseString, calculator } from "./unitTests";
+import {
+  capitalize,
+  reverseString,
+  calculator,
+  ceaserCipher,
+} from "./unitTests";
 
 test("Capitalizes hello to Hello", () => {
   expect(capitalize("hello")).toBe("Hello");
@@ -25,5 +30,5 @@ test("divide", () => {
 });
 
 test("a letter can be shifted to a letter by entering in 'n' number", () => {
-  expect(ceaserCipher("a")).toBe("c");
+  expect(ceaserCipher("ABc!", 2)).toBe("CDe!");
 });
