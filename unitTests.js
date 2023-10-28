@@ -65,4 +65,43 @@ export function ceaserCipher(string, shift) {
   return charCodeString;
 }
 
-ceaserCipher("abc", 2);
+export function analyzeArray(array) {
+  let object = {
+    average: null,
+    min: null,
+    max: null,
+    length: null,
+  };
+
+  const averageCalculation = (input) => {
+    const sum = input.reduce((total, currentValue) => {
+      return total + currentValue;
+    }, 0); // this is a function expression to return a sum value for the numbers listed in an inputed array;
+
+    const average = Math.ceil(sum / input.length);
+    object.average = average;
+  }; //changes the average property of the object to the average of the entered in array
+
+  const minCalculation = (input) => {
+    let minNumber = Math.min(...input);
+    object.min = minNumber;
+  };
+
+  const maxCalculation = (input) => {
+    let maxNumber = Math.max(...input);
+    object.max = maxNumber;
+  };
+
+  const lengthOfArray = (input) => {
+    let length = input.length;
+    object.length = length;
+  };
+
+  averageCalculation(array); // actually changes the average property
+  minCalculation(array); // actually changes the min property
+  maxCalculation(array); //actually changes the max property
+  lengthOfArray(array);
+  console.log(object);
+}
+
+analyzeArray([2, 5, 6]);

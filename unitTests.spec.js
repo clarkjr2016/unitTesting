@@ -3,6 +3,7 @@ import {
   reverseString,
   calculator,
   ceaserCipher,
+  analyzeArray,
 } from "./unitTests";
 
 test("Capitalizes hello to Hello", () => {
@@ -31,4 +32,8 @@ test("divide", () => {
 
 test("a letter can be shifted to a letter by entering in 'n' number", () => {
   expect(ceaserCipher("ABc!", 2)).toBe("CDe!");
+});
+
+test("Array of [2,6] entered into the function returns an object with a property called average that is equal to 4", () => {
+  expect(analyzeArray([2, 6])).toBe(4);
 });
